@@ -33,7 +33,7 @@ public class BankAccount{
     return false;
   }
 
-  public boolean withdraw(inp){
+  public boolean withdraw(double inp){
     if(inp < balance){
       balance = balance - inp;
       return true;
