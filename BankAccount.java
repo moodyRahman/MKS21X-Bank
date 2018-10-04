@@ -6,7 +6,7 @@ public class BankAccount{
   private String password;
 
   //constructor
-  public BankAccount(long balanceInp, int accountIDInp, String passwordINP){
+  public BankAccount(int accountIDInp, double balanceInp, String passwordINP){
     balance = balanceInp;
     accountID = accountIDInp;
     password = passwordINP;
