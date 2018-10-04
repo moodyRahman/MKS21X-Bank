@@ -6,12 +6,10 @@ public class BankAccount{
   private String password;
 
   //constructor
-  public BankAccount(int accountIDInp, double balanceInp, String passwordINP){
+  public BankAccount(double balanceInp, int accountIDInp, String passwordINP){
     balance = balanceInp;
     accountID = accountIDInp;
     password = passwordINP;
-    if(password.length() < 5){
-      System.out.println("your password is too short!");
     }
   }
 
@@ -33,20 +31,17 @@ public class BankAccount{
   public boolean deposit(double inp){
     if(inp >= 0){
       balance = balance + inp;
-      System.out.println("deposit successful!");
+      System.out.println(inp);
       return true;
     }
-    System.out.println("deposit error: positive number needed");
     return false;
   }
 
   public boolean withdraw(double inp){
     if(inp < balance){
       balance = balance - inp;
-      System.out.println("withdrawal successful!");
       return true;
     }
-    System.out.println("balance too low");
     return false;
 
   }
