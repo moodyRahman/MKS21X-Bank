@@ -6,12 +6,31 @@ public class BankAccount{
   private String password;
 
   //constructor
-  public BankAccount(double balanceInp, int accountIDInp, String passwordINP){
+  public BankAccount(double balanceInp, int accountIDInp, String passwordInp){
     balance = balanceInp;
     accountID = accountIDInp;
-    password = passwordINP;
+    password = passwordInp;
     }
 
+
+  //password authentication
+  private boolean authenticate(String passwordInp){
+    if (passwordInp.equals(password)){
+      return true;
+    }
+    return false;
+  }
+
+
+  //transferto
+  public boolean transferTo(BankAccount other, double amount, String passwordInp){
+    if(authenticate(passwordInp)){
+      if(this.withdraw(amount) && other.deposit(amount)){
+        return true;
+      }
+    }
+    return false;
+  }
 
   // accessor functions
   public double retBalance(){
@@ -30,7 +49,6 @@ public class BankAccount{
   public boolean deposit(double inp){
     if(inp >= 0){
       balance = balance + inp;
-      System.out.println(inp);
       return true;
     }
     return false;
