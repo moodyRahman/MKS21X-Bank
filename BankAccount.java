@@ -11,7 +11,6 @@ public class BankAccount{
     accountID = accountIDInp;
     password = passwordINP;
     }
-  }
 
 
   // accessor functions
