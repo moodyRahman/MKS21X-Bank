@@ -24,13 +24,14 @@ public class BankAccount{
 
   //transferto
   public boolean transferTo(BankAccount other, double amount, String password){
-    if(authenticate(password)){
-      if(this.withdraw(amount) && other.deposit(amount)){
+    if(authenticate(password)){                                                 //if my input password matches the objact instance password
+      if(this.withdraw(amount) && other.deposit(amount)){                       //short circuit boolean to test if the first account has enough money to trassfer
         return true;
       }
     }
     return false;
   }
+
 
   // accessor functions
   public double retBalance(){
@@ -60,11 +61,9 @@ public class BankAccount{
       return true;
     }
     return false;
-
   }
 
   public String toString(){
     return "id: " + accountID + "\t" + "balance: " + balance;
   }
-
 }
