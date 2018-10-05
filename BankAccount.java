@@ -6,10 +6,10 @@ public class BankAccount{
   private String password;
 
   //constructor
-  public BankAccount(double balanceInp, int accountIDInp, String passwordInp){
-    balance = balanceInp;
-    accountID = accountIDInp;
-    password = passwordInp;
+  public BankAccount(double balance, int account, String password){
+    this.balance = balance;
+    this.accountID = account;
+    this.password = password;
     }
 
 
@@ -23,8 +23,8 @@ public class BankAccount{
 
 
   //transferto
-  public boolean transferTo(BankAccount other, double amount, String passwordInp){
-    if(authenticate(passwordInp)){
+  public boolean transferTo(BankAccount other, double amount, String password){
+    if(authenticate(password)){
       if(this.withdraw(amount) && other.deposit(amount)){
         return true;
       }
