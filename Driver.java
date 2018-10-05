@@ -1,7 +1,7 @@
 public class Driver{
 
   public static void main(String[] args){
-    BankAccount Mood = new BankAccount(023134, 678.54, "wackery");
+    BankAccount Mood = new BankAccount(678.0, 235556, "wackery");
     System.out.println(Mood);
     Mood.deposit(.53);
     Mood.withdraw(100);
