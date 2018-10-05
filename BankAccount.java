@@ -42,21 +42,21 @@ public class BankAccount{
 
 
   //mutator functions
-  public void changePassword(String inp){
-    password = inp;
+  public void changePassword(String password){
+    this.password = password;
   }
 
-  public boolean deposit(double inp){
-    if(inp >= 0){
-      balance = balance + inp;
+  public boolean deposit(double deposit){
+    if(deposit >= 0){
+      this.balance = balance + deposit;
       return true;
     }
     return false;
   }
 
-  public boolean withdraw(double inp){
-    if(inp < balance){
-      balance = balance - inp;
+  public boolean withdraw(double withdraw){
+    if(withdraw < balance){
+      this.balance = balance - withdraw;
       return true;
     }
     return false;
